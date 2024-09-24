@@ -11,8 +11,8 @@ const footerStyles: React.CSSProperties = {
 
 const containerStyles: React.CSSProperties = {
     display: 'flex',
-    flexDirection: 'column' , // Ensures TypeScript accepts this
-    maxWidth: '1300px',
+    flexDirection: 'column' , 
+    maxWidth: '1500px',
     margin: '0 auto',
 };
 
@@ -26,6 +26,9 @@ const columnStyles: React.CSSProperties = {
     flex: '1',
     margin: '0px',
     minWidth: '350px',
+    marginLeft : "3rem",
+    marginRight : "1rem",
+    marginTop :"1rem",
 };
 
 const headerStyles: React.CSSProperties = {
@@ -48,7 +51,7 @@ const iconStyles: React.CSSProperties = {
 const listStyles: React.CSSProperties = {
     listStyle: 'none',
     padding: '0',
-    marginLeft: '150px'
+    marginLeft: '150px',
     //textAlign:'center',
 };
 

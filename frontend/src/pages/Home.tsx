@@ -20,11 +20,20 @@ const Home = () => {
     navigate("/signup");
   };
   return (
-    <Box width={"100%"} height={"100%"} //full home page
+    <Box
+    sx={{
+      width: "100%",
+      minHeight: "100vh",
+      bgcolor: "linear-gradient(135deg, #0f0c29, #302b63, #24243e)",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      color: "#fff",
+      overflowX: "hidden",
+    }}
   >
     <Box
         sx={{
-          
           display: "flex",
           width: "100%",
           flexDirection: "column",
@@ -49,19 +58,27 @@ const Home = () => {
             gap: 0,
           }}
         >
-    
+
           
-          <Box //typing letters animation
-          sx={{ flex: 1 , display: "flex", justifyContent: "center" ,alignItems: "center",pr: "2rem", top:20  }}> 
-            <TypingAnim /> 
-          </Box>
+      <Box
+        sx={{
+        flex: 1,
+        display: "flex",
+        justifyContent: "flex-start",  
+        alignItems: "center",          
+        pl: "5rem",                    
+        textAlign: "left",             
+       }}
+      >
+      <TypingAnim /> 
+      </Box>
           
           <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}> 
             <img //chatbot image on the banner
               src="front5.png"
               alt="chatbot"
               style={{
-                width: isBelowMd ? "100%" : "90%",
+                width: isBelowMd ? "100%" : "75%",
                 borderRadius: 0,
                 padding: 0,
               }}
@@ -69,30 +86,92 @@ const Home = () => {
           </Box>
           <Button //get started here button
           variant="contained"
-           sx={{
-             bgcolor: "#d500f9",
-             borderRadius: 5,
-             position: "absolute",
-             bottom: 200,
-             left: "20%",
-             transform: "translateX(-50%)",
-             px: 4,
-             py: 1,
-             "&:hover": {
-               bgcolor: "#8e24aa",
-              },
-            }}
+          sx={{
+            bgcolor: "#a445ff",
+            borderRadius: "20px",
+            position: "absolute",
+            bottom: 150,
+            left: "20%",
+            transform: "translateX(-50%)",
+            px: 5,
+            py: 2,
+            color: "#fff",
+            fontSize: "18px",
+            fontWeight: "bold",
+            "&:hover": {
+              bgcolor: "#8839c3",
+            },
+          }}
           onClick={handleSignupClick}
          >
          Get Started here
         </Button>
         </Box>
+
+        <Box
+        sx={{
+          width: "100%",
+          minHeight: "20vh",
+          bgcolor: "#212121",
+          display: "flex",
+          flexDirection: { md: "row", xs: "column" },
+          justifyContent: "space-between",
+          alignItems: "center",
+          py: "3rem",
+          px: "2rem",
+          mx:"10rem",
+          pr :"20rem"
+        }}
+      >
+       <Box
+  sx={{
+    
+    alignItems: "center", 
+    //textAlign: "center",
+    maxWidth: "700px",  
+    mx: "15rem",          
+    perspective: "1500px",  
+  }}
+>
+  <img
+    src="front6.png"
+    alt="service"
+    width="100%"
+    style={{
+      transform: "rotateY(15deg) scale(1.1)",  
+      transition: "transform 0.5s ease",      
+      boxShadow: "0 20px 50px rgba(0, 0, 0, 0.5)",  
+    }}
+    onMouseOver={(e) => {
+      e.currentTarget.style.transform = "rotateY(25deg) scale(1.2)";  
+    }}
+    onMouseOut={(e) => {
+      e.currentTarget.style.transform = "rotateY(15deg) scale(1.1)";  
+    }}
+  />
+</Box>
+        <Box
+          sx={{
+            textAlign: "center",
+            color: "#fff",
+            maxWidth: "500px",
+          }}
+        >
+          <Typography variant="h2" fontWeight="bold">
+          Smart, Fast, and Reliable  Personalized AI Assistant
+          </Typography>
+          <Typography variant="body1" sx={{ mt: 2 }}>
+          Say goodbye to endless searching with Kumiai-Bot! Fast, smart, and always ready, Kumiai-Bot provides the information you need in seconds.  
+          </Typography>
+        </Box>
+      </Box>
         <Box
           sx={{
             width: "100%",
             height: "700px",
             display: "flex",
-            bgcolor: "black",
+            backgroundImage :"url(backt.jpg)",
+            bgcolor: "#4a148c",
             flexDirection: { md: "row", xs: "column", sm: "column" },
             gap: 0,
             my: 0,
@@ -102,20 +181,40 @@ const Home = () => {
             <CardMedia
               component="img"
               alt="service image"
-              height="300"
+              height="400"
               image="back3.png"
+            />
+  
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+              Explore the power of AI with our MERN-based chatbot. Powered by 
+              MongoDB, Express, React, and Node.js, this chatbot offers smart, 
+              fast, and reliable solutions in real-time. Engage now and simplify 
+              your search for knowledge, advice, and more.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button
+                size="large"
+                variant="contained"
+                sx={{ backgroundColor: "#8a2be2", margin: "auto" }}
+                onClick={handleSignupClick}
+              >
+                Sign Up
+              </Button>
+            </CardActions>
+
+            </Card>
+            <Card sx={{ maxWidth: 500, margin: "auto", borderRadius: "1rem" }}>
+            <CardMedia
+              component="img"
+              alt="service image"
+              height="400"
+              image="back4.png"
             />
             <CardContent>
               <Typography variant="body2" color="text.secondary">
-                We are excited to have you here! Embark on a journey with us and
-                unlock a world of exclusive features and unparalleled
-                experiences. Our platform is designed to cater to your needs,
-                whether you're looking to connect, learn, or explore. Sign up
-                today and become part of a thriving community where
-                opportunities are endless, and every moment is a chance to
-                shine. Sign up today to get access to exclusive features and
-                content. Join our community and start exploring the amazing
-                benefits we offer.
+              Engage now and simplify your search for knowledge, advice, and more. Kumiai-Bot provides instant responses, helping you find what you need in seconds.Got a question? Kumiai-Bot will respond in seconds!Let me help you find the knowledge you need—quick, simple, and efficient!
               </Typography>
             </CardContent>
             <CardActions>
@@ -124,49 +223,24 @@ const Home = () => {
                 variant="contained"
                 sx={{ backgroundColor: "#8a2be2", margin: "auto" }}
               >
-                Sign Up
+                Login
               </Button>
             </CardActions>
           </Card>
-          <img
-            //className="image-inverted rotate"
-            //src="logo.png"
-            alt="openai"
-            style={{ width: "200px", margin: "auto" }}
-          />
+          
         </Box>
         
-        <Box sx={{ display: "flex", backgroundColor: "white", mx: "auto" }}>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-              component="img"
-              alt="green iguana"
-              height="140"
-              image="back2.png"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">Share</Button>
-              <Button size="small">Learn More</Button>
-            </CardActions>
-          </Card>
+        <Box sx={{ display: "flex", backgroundColor: "#e0e0e0", mx: "auto" }}>
+          
           <img
-            src="back1.png"
+            src="home1.png"
             alt="chatbot"
             style={{
               display: "flex",
               margin: "auto",
               width: isBelowMd ? "80%" : "60%",
               borderRadius: 20,
-              //boxShadow: "-5px -5px 105px #64f3d5",
+              boxShadow: "-5px -5px 10px #673ab7",
               marginTop: 20,
               marginBottom: 20,
               padding: 10,

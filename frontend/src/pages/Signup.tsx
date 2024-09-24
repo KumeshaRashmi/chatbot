@@ -30,12 +30,12 @@ const Signup = () => {
     if(auth?.user){
       return navigate("/chat");
     }
-   },[auth]);
+   },[auth, navigate]);
 
   return (
   <Box width={"85%"} height={"100%"} display="flex" flex={1}>
     <Box padding={5} mt={2} display={{ md: "flex", sm: "none", xs: "none" }}>
-        <img src="front6.png" alt="Robot" style={{ width: "600px" }} />
+        <img src="signup.png" alt="Robot" style={{ width: "600px" }} />
       </Box>
       <Box  //form
       display={"flex"}
@@ -45,7 +45,7 @@ const Signup = () => {
       padding={2}
       ml={"auto"}
       mt={6}
-      >
+      > 
         <form 
         onSubmit={handleSubmit}
         style ={{
